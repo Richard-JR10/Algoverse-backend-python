@@ -87,6 +87,38 @@ async def bubble_sort(request: SortRequest):
 
     return {"steps": steps, "sortedArray": array}
 
+
+@app.post("/sort/selection")
+async def selection_sort(request: SortRequest):
+    arr = request.array
+    if not arr or not all(isinstance(x, (int, float)) for x in arr):
+        raise HTTPException(status_code=400, detail="Invalid input: must be a non-empty array of numbers")
+
+    steps = []
+    array = arr.copy()
+    n = len(array)
+
+    for i in range(n):
+        min_idx = i
+
+        # Find the minimum element in the unsorted part of the array
+        for j in range(i + 1, n):
+            # Record comparison step
+            steps.append({"type": "compare", "indices": [min_idx, j]})
+            if array[j] < array[min_idx]:
+                min_idx = j
+                steps.append({"type": "minimum", "indices": [min_idx]})
+
+        # Swap the found minimum element with the first element of the unsorted part
+        if min_idx != i:
+            array[i], array[min_idx] = array[min_idx], array[i]
+            steps.append({"type": "swap", "indices": [i, min_idx], "array": array.copy()})
+
+        # Record sorted index
+        steps.append({"type": "sorted", "index": i})
+
+    return {"steps": steps, "sortedArray": array}
+
 def get_text_model():
     """Returns a text-only generative model."""
     try:
