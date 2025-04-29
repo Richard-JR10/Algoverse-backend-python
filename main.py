@@ -119,6 +119,39 @@ async def selection_sort(request: SortRequest):
 
     return {"steps": steps, "sortedArray": array}
 
+@app.post("/sort/insertion")
+async def insertion_sort(request: SortRequest):
+    arr = request.array
+    if not arr or not all(isinstance(x, (int, float)) for x in arr):
+        raise HTTPException(status_code=400, detail="Invalid input: must be a non-empty array of numbers")
+
+    steps = []
+    array = arr.copy()
+    n = len(array)
+
+    # Mark the first element as sorted
+    steps.append({"type": "sorted", "index": 0})
+
+    # Traverse through 1 to len(array)
+    for i in range(1, n):
+        # Compare key with each element on the left until smaller element is found
+        steps.append({"type": "selected", "indices": [i]})
+        for j in range(i, 0, -1):
+            # Record comparison step
+            steps.append({"type": "compare", "indices": [j, j - 1]})
+
+            if array[j] < array[j - 1]:
+                # Swap adjacent elements
+                array[j], array[j - 1] = array[j - 1], array[j]
+                steps.append({"type": "swap", "indices": [j, j - 1], "array": array.copy()})
+            else:
+                break
+
+        # Mark as sorted up to current index
+        steps.append({"type": "sorted", "index": i})
+
+    return {"steps": steps, "sortedArray": array}
+
 def get_text_model():
     """Returns a text-only generative model."""
     try:
