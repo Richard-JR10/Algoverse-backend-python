@@ -56,6 +56,10 @@ class BenchmarkResponse(BaseModel):
 class SortRequest(BaseModel):
     array: List[int]
 
+class SearchRequest(BaseModel):
+    array: List[int]
+    value: int
+
 @app.get("/")
 async def root():
     return {"message": "Hello test"}
@@ -151,6 +155,204 @@ async def insertion_sort(request: SortRequest):
         steps.append({"type": "sorted", "index": i})
 
     return {"steps": steps, "sortedArray": array}
+
+
+@app.post("/sort/merge")
+async def merge_sort(request: SortRequest):
+    try:
+        arr = request.array
+        if not arr or not all(isinstance(x, (int, float)) for x in arr):
+            raise HTTPException(status_code=400, detail="Invalid input: must be a non-empty array of numbers")
+
+        steps = []
+        array = arr.copy()
+
+        def merge_sort_recursive(arr: List[float], left: int, right: int, depth: int = 0):
+            if left < right:
+                mid = (left + right) // 2
+
+                # Step 1: Split for color-coded highlighting
+                left_half = arr[left:mid + 1]
+                right_half = arr[mid + 1:right + 1]
+                steps.append({
+                    "type": "split",
+                    "left": left,
+                    "right": right,
+                    "mid": mid,
+                    "left_half": left_half.copy(),
+                    "right_half": right_half.copy(),
+                    "depth": depth
+                })
+
+                # Step 2: Recursion to move bars down
+                steps.append({
+                    "type": "recurse",
+                    "left": left,
+                    "right": mid,
+                    "depth": depth + 1
+                })
+                merge_sort_recursive(arr, left, mid, depth + 1)
+
+                steps.append({
+                    "type": "recurse",
+                    "left": mid + 1,
+                    "right": right,
+                    "depth": depth + 1
+                })
+                merge_sort_recursive(arr, mid + 1, right, depth + 1)
+
+                # Step 3: Backtrack to move bars up
+                steps.append({
+                    "type": "backtrack",
+                    "left": left,
+                    "right": right,
+                    "depth": depth
+                })
+
+                # Step 4: Merge
+                merge(arr, left, mid, right, depth)
+
+        def merge(arr: List[float], left: int, mid: int, right: int, depth: int):
+            left_half = arr[left:mid + 1].copy()
+            right_half = arr[mid + 1:right + 1].copy()
+
+            # Before merge
+            steps.append({
+                "type": "merge_before",
+                "left": left,
+                "right": right,
+                "before_array": arr[left:right + 1].copy(),
+                "depth": depth
+            })
+
+            i = j = 0
+            k = left
+            while i < len(left_half) and j < len(right_half):
+                if left_half[i] <= right_half[j]:
+                    arr[k] = left_half[i]
+                    i += 1
+                else:
+                    arr[k] = right_half[j]
+                    j += 1
+                k += 1
+
+            while i < len(left_half):
+                arr[k] = left_half[i]
+                i += 1
+                k += 1
+
+            while j < len(right_half):
+                arr[k] = right_half[j]
+                j += 1
+                k += 1
+
+            # After merge
+            steps.append({
+                "type": "merge_after",
+                "left": left,
+                "right": right,
+                "after_array": arr[left:right + 1].copy(),
+                "depth": depth
+            })
+
+            # Sorted segment
+            steps.append({
+                "type": "sorted",
+                "left": left,
+                "right": right,
+                "depth": depth
+            })
+
+        merge_sort_recursive(array, 0, len(array) - 1)
+
+        return {"steps": steps, "sortedArray": array}
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.post("/search/linear")
+async def insertion_sort(request: SearchRequest):
+    arr = request.array
+    value = request.value
+    if not arr or not all(isinstance(x, (int, float)) for x in arr):
+        raise HTTPException(status_code=400, detail="Invalid input: must be a non-empty array of numbers")
+
+    steps = []
+    n = len(arr)
+
+    for i in range(0, n):
+        steps.append({
+            "type": "checking",
+            "index": i
+        })
+        if arr[i] == value:
+            steps.append({
+                "type":"found",
+                "index":i
+            })
+
+            return {"steps":steps}
+
+    steps.append({
+        "type": "not_found",
+        "index": -1
+    })
+
+    return {"steps": steps}
+
+
+@app.post("/search/binary")
+async def binary_search(request: SearchRequest):
+    arr = request.array
+    value = request.value
+    if not arr or not all(isinstance(x, (int, float)) for x in arr):
+        raise HTTPException(status_code=400, detail="Invalid input: must be a non-empty array of numbers")
+
+    # Check if array is sorted
+    if not all(arr[i] <= arr[i + 1] for i in range(len(arr) - 1)):
+        raise HTTPException(status_code=400, detail="Input array must be sorted")
+
+    steps = []
+    left, right = 0, len(arr) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+        steps.append({
+            "type": "checking",
+            "index": mid,
+            "left": left,
+            "right": right
+        })
+        # Rest of the code...
+
+        if arr[mid] == value:
+            steps.append({
+                "type": "found",
+                "index": mid
+            })
+            return {"steps": steps}
+        elif arr[mid] < value:
+            left = mid + 1
+            steps.append({
+                "type": "search_right",
+                "left": left,
+                "right": right
+            })
+        else:
+            right = mid - 1
+            steps.append({
+                "type": "search_left",
+                "left": left,
+                "right": right
+            })
+
+    steps.append({
+        "type": "not_found",
+        "index": -1
+    })
+
+    return {"steps": steps}
+
 
 def get_text_model():
     """Returns a text-only generative model."""
