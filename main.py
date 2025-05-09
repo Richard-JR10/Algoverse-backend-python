@@ -215,13 +215,13 @@ async def merge_sort(request: SortRequest):
         def merge(arr: List[float], left: int, mid: int, right: int, depth: int):
             left_half = arr[left:mid + 1].copy()
             right_half = arr[mid + 1:right + 1].copy()
-
+            before_array = arr.copy()
             # Before merge
             steps.append({
                 "type": "merge_before",
                 "left": left,
                 "right": right,
-                "before_array": arr[left:right + 1].copy(),
+                "before_array": before_array,
                 "depth": depth
             })
 
@@ -251,7 +251,8 @@ async def merge_sort(request: SortRequest):
                 "type": "merge_after",
                 "left": left,
                 "right": right,
-                "after_array": arr[left:right + 1].copy(),
+                "before_array": before_array,
+                "after_array": arr.copy(),
                 "depth": depth
             })
 
