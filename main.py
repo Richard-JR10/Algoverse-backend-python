@@ -271,6 +271,92 @@ async def merge_sort(request: SortRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
+
+@app.post("/sort/quick")
+async def quick_sort(request: SortRequest):
+    try:
+        arr = request.array
+        if not arr or not all(isinstance(x, (int, float)) for x in arr):
+            raise HTTPException(status_code=400, detail="Invalid input: must be a non-empty array of numbers")
+
+        steps = []
+        array = arr.copy()
+
+        def quick_sort_recursive(arr: List[float], left: int, right: int):
+            if left < right:
+                # Step 1: Partition the array
+                pivot_index = partition(arr, left, right)
+
+                # Step 2: Recursively sort the left partition
+                quick_sort_recursive(arr, left, pivot_index - 1)
+
+                # Step 3: Recursively sort the right partition
+                quick_sort_recursive(arr, pivot_index + 1, right)
+
+        def partition(arr: List[float], left: int, right: int) -> int:
+            pivot = arr[right]
+            # Highlight pivot
+            steps.append({
+                "type": "pivot",
+                "pivot": right
+            })
+
+            i = left - 1  # Index of smaller element
+
+            for j in range(left, right):
+                # Highlight elements being compared, include pivot
+                steps.append({
+                    "type": "compare",
+                    "left": j,
+                    "right": right,
+                    "pivot": right
+                })
+
+                if arr[j] <= pivot:
+                    i += 1  # Increment index of smaller element
+                    if i != j:
+                        # Record swap, include pivot
+                        steps.append({
+                            "type": "swap",
+                            "index1": i,
+                            "index2": j,
+                            "pivot": right
+                        })
+                        arr[i], arr[j] = arr[j], arr[i]
+
+            # Place pivot in its correct position
+            if i + 1 != right:
+                steps.append({
+                    "type": "swap",
+                    "index1": i + 1,
+                    "index2": right,
+                    "pivot": right
+                })
+                arr[i + 1], arr[right] = arr[right], arr[i + 1]
+
+            # Highlight the partition
+            steps.append({
+                "type": "partition",
+                "left": left,
+                "right": right,
+                "pivot": i + 1
+            })
+
+            # Mark pivot as sorted
+            steps.append({
+                "type": "sorted",
+                "index": i + 1
+            })
+
+            return i + 1
+
+        quick_sort_recursive(array, 0, len(array) - 1)
+
+        return {"steps": steps, "sortedArray": array}
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
 @app.post("/search/linear")
 async def insertion_sort(request: SearchRequest):
     arr = request.array
