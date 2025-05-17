@@ -60,6 +60,9 @@ class SearchRequest(BaseModel):
     array: List[int]
     value: int
 
+class RecursionRequest(BaseModel):
+    n: int
+
 @app.get("/")
 async def root():
     return {"message": "Hello test"}
@@ -437,6 +440,96 @@ async def binary_search(request: SearchRequest):
         "type": "not_found",
         "index": -1
     })
+
+    return {"steps": steps}
+
+
+@app.post("/recursion/factorial")
+async def get_factorial_steps(request: RecursionRequest):
+    n = request.n
+    if n < 0 or n > 12:
+        raise HTTPException(status_code=400, detail="Number must be between 0 and 12")
+
+    steps = []
+
+    def factorial_recursive(current):
+        # Add entry step
+        steps.append({
+            "type": "entry",
+            "n": current,
+            "description": f"Enter factorial({current})"
+        })
+
+        if current == 0 or current == 1:
+            # Base case
+            steps.append({
+                "type": "base",
+                "n": current,
+                "result": 1,
+                "description": f"Base case: {current}! = 1"
+            })
+            return 1
+        else:
+            # Recursive case
+            steps.append({
+                "type": "recursive",
+                "n": current,
+                "nextCall": current - 1,
+                "description": f"Call factorial({current - 1})"
+            })
+
+            sub_result = factorial_recursive(current - 1)
+
+            # Return step
+            steps.append({
+                "type": "return",
+                "n": current,
+                "subValue": sub_result,
+                "returnValue": current * sub_result,
+                "description": f"Return {current} × {sub_result} = {current * sub_result}"
+            })
+
+            return current * sub_result
+
+    factorial_recursive(n)
+
+    return {"steps": steps}
+
+
+class HanoiRequest(BaseModel):
+    n: int
+
+
+class HanoiStepsResponse(BaseModel):
+    steps: list[dict]
+
+
+@app.post("/recursion/hanoi", response_model=HanoiStepsResponse)
+async def get_hanoi_steps(request: HanoiRequest):
+    n = request.n
+    if n < 1 or n > 5:
+        raise HTTPException(status_code=400, detail="Number of disks must be between 1 and 5")
+
+    steps = []
+
+    def hanoi_recursive(n: int, source: str, auxiliary: str, destination: str):
+        if n > 0:
+            # Move n-1 disks from source to auxiliary via destination
+            hanoi_recursive(n - 1, source, destination, auxiliary)
+
+            # Move the nth disk from source to destination
+            steps.append({
+                "type": "move",
+                "disk": n,
+                "from": source,
+                "to": destination,
+                "description": f"Move disk {n} from peg {source} to peg {destination}"
+            })
+
+            # Move n-1 disks from auxiliary to destination via source
+            hanoi_recursive(n - 1, auxiliary, source, destination)
+
+    hanoi_recursive(n, 'A', 'B', 'C')
 
     return {"steps": steps}
 
