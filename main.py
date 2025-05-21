@@ -296,6 +296,18 @@ async def quick_sort(request: SortRequest):
                 # Step 3: Recursively sort the right partition
                 quick_sort_recursive(arr, pivot_index + 1, right)
 
+                # After both recursive calls, the subarray from left to right is fully sorted
+                steps.append({
+                    "type": "sorted",
+                    "indices": list(range(left, right + 1))
+                })
+            elif left == right:
+                # Single element is sorted
+                steps.append({
+                    "type": "sorted",
+                    "indices": [left]
+                })
+
         def partition(arr: List[float], left: int, right: int) -> int:
             pivot = arr[right]
             # Highlight pivot
@@ -345,10 +357,10 @@ async def quick_sort(request: SortRequest):
                 "pivot": i + 1
             })
 
-            # Mark pivot as sorted
+            # Mark only the pivot as sorted
             steps.append({
                 "type": "sorted",
-                "index": i + 1
+                "indices": [i + 1]
             })
 
             return i + 1
