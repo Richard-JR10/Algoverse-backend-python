@@ -1,8 +1,9 @@
+import heapq
 import uvicorn
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List
+from typing import List, Dict
 import google.generativeai as genai
 from contextlib import asynccontextmanager
 import json
@@ -62,6 +63,86 @@ class SearchRequest(BaseModel):
 
 class RecursionRequest(BaseModel):
     n: int
+
+class GraphRequest(BaseModel):
+    adjacency_list: Dict[str, List[str]]
+    start_node: str
+
+class Edge(BaseModel):
+    toNode: str
+    weight: int
+
+class DijkstraGraphRequest(BaseModel):
+    adjacency_list: Dict[str, List[Edge]]
+    start_node: str
+
+
+class GraphStep(BaseModel):
+    type: str
+    node: str | None = None
+    source: str | None = None
+    target: str | None = None
+    from_node: str | None = None
+    distance: float | None = None
+
+class PriorityQueue:
+    def __init__(self):
+        self.heap = []
+        self.entry_finder = {}
+        self.REMOVED = '<removed>'
+        self.counter = 0
+
+    def enqueue(self, item, priority):
+        if item in self.entry_finder:
+            self.remove(item)
+        entry = [priority, self.counter, item]
+        self.entry_finder[item] = entry
+        heapq.heappush(self.heap, entry)
+        self.counter += 1
+
+    def remove(self, item):
+        entry = self.entry_finder.pop(item, None)
+        if entry:
+            entry[-1] = self.REMOVED
+
+    def dequeue(self):
+        while self.heap:
+            priority, count, item = heapq.heappop(self.heap)
+            if item is not self.REMOVED:
+                del self.entry_finder[item]
+                return item
+        raise KeyError('Pop from an empty priority queue')
+
+    def is_empty(self):
+        return len(self.entry_finder) == 0
+
+class UnionFind:
+    def __init__(self, elements):
+        self.parent = {element: element for element in elements}
+        self.rank = {element: 0 for element in elements}
+
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])  # Path compression
+        return self.parent[x]
+
+    def union(self, x, y):
+        root_x = self.find(x)
+        root_y = self.find(y)
+        if root_x == root_y:
+            return
+        # Union by rank
+        if self.rank[root_x] < self.rank[root_y]:
+            self.parent[root_x] = root_y
+        elif self.rank[root_x] > self.rank[root_y]:
+            self.parent[root_y] = root_x
+        else:
+            self.parent[root_y] = root_x
+            self.rank[root_x] += 1
+
+    def connected(self, x, y):
+        return self.find(x) == self.find(y)
+
 
 @app.get("/")
 async def root():
@@ -455,6 +536,258 @@ async def binary_search(request: SearchRequest):
 
     return {"steps": steps}
 
+
+@app.post("/graph/bfs", response_model=List[GraphStep])
+async def bfs(request: GraphRequest):
+    adjacency_list = request.adjacency_list
+    start_node = request.start_node
+
+    # Validate inputs
+    if not isinstance(adjacency_list, dict):
+        raise HTTPException(status_code=400, detail="Adjacency list must be a dictionary")
+    if not isinstance(start_node, str) or not start_node:
+        raise HTTPException(status_code=400, detail="Start node must be a non-empty string")
+    if start_node not in adjacency_list:
+        raise HTTPException(status_code=400, detail=f"Start node '{start_node}' not found in graph")
+
+    # Validate nodes and edges
+    for node, neighbors in adjacency_list.items():
+        if not isinstance(node, str):
+            raise HTTPException(status_code=400, detail="Node keys must be strings")
+        if not isinstance(neighbors, list):
+            raise HTTPException(status_code=400, detail=f"Neighbors of node '{node}' must be a list")
+        for neighbor in neighbors:
+            if not isinstance(neighbor, str):
+                raise HTTPException(status_code=400, detail=f"Neighbor '{neighbor}' of node '{node}' must be a string")
+            if neighbor not in adjacency_list:
+                raise HTTPException(status_code=400, detail=f"Neighbor '{neighbor}' of node '{node}' not found in graph")
+
+    # BFS algorithm
+    steps = []
+    visited = set()
+    queue = [start_node]
+    visited.add(start_node)
+
+    steps.append({"type": "queue", "node": start_node})
+
+    while queue:
+        current = queue.pop(0)
+        steps.append({"type": "dequeue", "node": current})
+
+        neighbors = adjacency_list.get(current, [])
+        for neighbor in neighbors:
+            steps.append({"type": "explore", "source": current, "target": neighbor})
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+                steps.append({"type": "visit", "node": neighbor, "from": current})
+                steps.append({"type": "queue", "node": neighbor})
+            else:
+                steps.append({"type": "visited", "source": current, "target": neighbor})
+
+        steps.append({"type": "finish", "node": current})
+
+    return steps
+
+@app.post("/graph/dfs", response_model=List[GraphStep])
+async def dfs(request: GraphRequest):
+    try:
+        adjacency_list = request.adjacency_list
+        start_node = request.start_node
+
+        # Validate inputs
+        if not isinstance(adjacency_list, dict):
+            raise HTTPException(status_code=400, detail="Adjacency list must be a dictionary")
+        if not isinstance(start_node, str) or not start_node.strip():
+            raise HTTPException(status_code=400, detail="Start node must be a non-empty string")
+        if start_node not in adjacency_list:
+            raise HTTPException(status_code=400, detail=f"Start node '{start_node}' not found in graph")
+
+        # Validate nodes and edges
+        for node, neighbors in adjacency_list.items():
+            if not isinstance(node, str) or not node.strip():
+                raise HTTPException(status_code=400, detail="Node keys must be non-empty strings")
+            if not isinstance(neighbors, list):
+                raise HTTPException(status_code=400, detail=f"Neighbors of node '{node}' must be a list")
+            for neighbor in neighbors:
+                if not isinstance(neighbor, str) or not neighbor.strip():
+                    raise HTTPException(status_code=400, detail=f"Neighbor of node '{node}' must be a non-empty string")
+                if neighbor not in adjacency_list:
+                    raise HTTPException(status_code=400, detail=f"Neighbor '{neighbor}' of node '{node}' not found in graph")
+
+        # DFS algorithm
+        steps = []
+        visited = set()
+        stack = [start_node]
+
+        steps.append({"type": "queue", "node": start_node})
+
+        while stack:
+            current = stack.pop()
+            if current not in visited:
+                steps.append({"type": "dequeue", "node": current})
+                visited.add(current)
+
+                neighbors = adjacency_list.get(current, [])
+                # Reverse neighbors to match frontend's stack behavior
+                for neighbor in neighbors[::-1]:
+                    steps.append({"type": "explore", "source": current, "target": neighbor})
+                    if neighbor not in visited:
+                        stack.append(neighbor)
+                        steps.append({"type": "visit", "node": neighbor, "from": current})
+                        steps.append({"type": "queue", "node": neighbor})
+                    else:
+                        steps.append({"type": "visited", "source": current, "target": neighbor})
+
+                steps.append({"type": "finish", "node": current})
+
+        return steps
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
+
+
+@app.post("/graph/dijkstra", response_model=List[GraphStep])
+async def dijkstra(request: DijkstraGraphRequest):
+    try:
+        adjacency_list = request.adjacency_list
+        start_node = request.start_node
+
+        # Validate inputs
+        if not isinstance(adjacency_list, dict):
+            raise HTTPException(status_code=400, detail="Adjacency list must be a dictionary")
+        if not isinstance(start_node, str) or not start_node.strip():
+            raise HTTPException(status_code=400, detail="Start node must be a non-empty string")
+        if start_node not in adjacency_list:
+            raise HTTPException(status_code=400, detail=f"Start node '{start_node}' not found in graph")
+
+        # Validate nodes and edges
+        for node, edges in adjacency_list.items():
+            if not isinstance(node, str) or not node.strip():
+                raise HTTPException(status_code=400, detail="Node keys must be non-empty strings")
+            if not isinstance(edges, list):
+                raise HTTPException(status_code=400, detail=f"Edges of node '{node}' must be a list")
+            for edge in edges:
+                if not isinstance(edge.toNode, str) or not edge.toNode.strip():
+                    raise HTTPException(status_code=400, detail=f"Target node of edge from '{node}' must be a non-empty string")
+                if edge.toNode not in adjacency_list:
+                    raise HTTPException(status_code=400, detail=f"Target node '{edge.toNode}' from '{node}' not found in graph")
+                if not isinstance(edge.weight, int) or edge.weight <= 0:
+                    raise HTTPException(status_code=400, detail=f"Weight of edge from '{node}' to '{edge.toNode}' must be a positive integer")
+
+        # Dijkstra's algorithm
+        steps = []
+        distances = {node: float('inf') for node in adjacency_list}
+        previous = {}
+        pq = PriorityQueue()
+        visited = set()
+
+        distances[start_node] = 0
+        pq.enqueue(start_node, 0)
+        steps.append({"type": "queue", "node": start_node})
+
+        while not pq.is_empty():
+            current = pq.dequeue()
+            if current in visited:
+                continue
+
+            steps.append({"type": "dequeue", "node": current})
+            visited.add(current)
+
+            for edge in adjacency_list.get(current, []):
+                toNode = edge.toNode
+                weight = edge.weight
+                steps.append({"type": "explore", "source": current, "target": toNode})
+
+                new_distance = distances[current] + weight
+                if new_distance < distances[toNode]:
+                    distances[toNode] = new_distance
+                    previous[toNode] = current
+                    if toNode not in visited:
+                        pq.enqueue(toNode, new_distance)
+                        steps.append({"type": "visit", "node": toNode, "distance": new_distance, "from": current})
+                    else:
+                        steps.append({"type": "distance", "node": toNode, "distance": new_distance})
+                else:
+                    steps.append({"type": "visited", "source": current, "target": toNode})
+
+            steps.append({"type": "finish", "node": current, "distance": distances[current]})
+
+        # Add shortest path steps
+        for node in adjacency_list:
+            if node != start_node and node in previous:
+                current = node
+                path = []
+                while current in previous:
+                    path.append((previous[current], current))
+                    current = previous[current]
+                for source, target in reversed(path):
+                    steps.append({"type": "path", "source": source, "target": target})
+
+        return steps
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
+
+@app.post("/graph/kruskal", response_model=List[GraphStep])
+async def kruskal(request: DijkstraGraphRequest):
+    try:
+        adjacency_list = request.adjacency_list
+
+        # Validate inputs
+        if not isinstance(adjacency_list, dict):
+            raise HTTPException(status_code=400, detail="Adjacency list must be a dictionary")
+        if not adjacency_list:
+            raise HTTPException(status_code=400, detail="Adjacency list cannot be empty")
+
+        # Validate nodes and edges
+        for node, edges in adjacency_list.items():
+            if not isinstance(node, str) or not node.strip():
+                raise HTTPException(status_code=400, detail="Node keys must be non-empty strings")
+            if not isinstance(edges, list):
+                raise HTTPException(status_code=400, detail=f"Edges of node '{node}' must be a list")
+            for edge in edges:
+                if not isinstance(edge.toNode, str) or not edge.toNode.strip():
+                    raise HTTPException(status_code=400, detail=f"Target node of edge from '{node}' must be a non-empty string")
+                if edge.toNode not in adjacency_list:
+                    raise HTTPException(status_code=400, detail=f"Target node '{edge.toNode}' from '{node}' not found in graph")
+                if not isinstance(edge.weight, int) or edge.weight <= 0:
+                    raise HTTPException(status_code=400, detail=f"Weight of edge from '{node}' to '{edge.toNode}' must be a positive integer")
+
+        # Kruskal's algorithm
+        steps = []
+        nodes = list(adjacency_list.keys())
+        uf = UnionFind(nodes)
+
+        # Collect unique edges (undirected)
+        edges = []
+        edge_map = set()
+        for source, neighbors in adjacency_list.items():
+            for edge in neighbors:
+                key = tuple(sorted([source, edge.toNode]))
+                if key not in edge_map:
+                    edges.append({"source": source, "target": edge.toNode, "weight": edge.weight})
+                    edge_map.add(key)
+
+        # Sort edges by weight
+        edges.sort(key=lambda x: x["weight"])
+
+        # Process edges
+        for edge in edges:
+            source = edge["source"]
+            target = edge["target"]
+
+            # Step: Consider edge
+            steps.append({"type": "consider", "source": source, "target": target})
+
+            # Check if edge forms a cycle
+            if not uf.connected(source, target):
+                uf.union(source, target)
+                steps.append({"type": "add", "source": source, "target": target})
+            else:
+                steps.append({"type": "reject", "source": source, "target": target})
+
+        return steps
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
 
 @app.post("/recursion/factorial")
 async def get_factorial_steps(request: RecursionRequest):
