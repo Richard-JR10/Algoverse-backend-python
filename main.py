@@ -20,7 +20,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 # CORS setup to allow frontend requests
-origins = ["http://localhost:5173/","https://algoverse1.netlify.app"]
+origins = ["http://localhost:5173","https://algoverse1.netlify.app"]
 GEMINI_API_KEY = "AIzaSyBytaqUQhjGY8ufW8BLlBPoFtkjdHjHTBA"
 genai.configure(api_key=GEMINI_API_KEY)
 
