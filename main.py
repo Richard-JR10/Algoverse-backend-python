@@ -21,7 +21,7 @@ app = FastAPI(lifespan=lifespan)
 
 # CORS setup to allow frontend requests
 origins = ["http://localhost:5173","https://algoverse1.netlify.app"]
-GEMINI_API_KEY = "AIzaSyBytaqUQhjGY8ufW8BLlBPoFtkjdHjHTBA"
+GEMINI_API_KEY = "AIzaSyAJ8MY3jEhr6a2kKaIeqc2bpI5W0Uop9ks"
 genai.configure(api_key=GEMINI_API_KEY)
 
 app.add_middleware(
@@ -541,7 +541,8 @@ async def binary_search(request: SearchRequest):
 async def bfs(request: GraphRequest):
     adjacency_list = request.adjacency_list
     start_node = request.start_node
-
+    print(adjacency_list)
+    print(start_node)
     # Validate inputs
     if not isinstance(adjacency_list, dict):
         raise HTTPException(status_code=400, detail="Adjacency list must be a dictionary")
@@ -587,6 +588,7 @@ async def bfs(request: GraphRequest):
 
         steps.append({"type": "finish", "node": current})
 
+    print(steps)
     return steps
 
 @app.post("/graph/dfs", response_model=List[GraphStep])

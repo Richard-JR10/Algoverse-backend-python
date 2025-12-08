@@ -16937,3 +16937,1139 @@ Trade-offs:
 2025-04-06 22:19:24.258 | INFO     | main:lifespan:15 - Starting up FastAPI application
 2025-04-06 22:19:28.435 | INFO     | main:lifespan:17 - Shutting down FastAPI application
 2025-04-06 22:19:28.435 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-09 18:31:19.641 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-09 18:31:19.641 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-09 18:31:22.372 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-09 18:31:22.372 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-09 18:31:55.544 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-09 18:31:55.544 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-09 18:32:51.322 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-09 18:32:51.322 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-10 10:28:06.165 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-10 10:28:10.221 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-11 18:14:05.568 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-11 18:14:05.568 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-11 18:14:19.944 | INFO     | main:compare:151 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-04-11 18:14:19.944 | INFO     | main:compare:151 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-04-11 18:14:23.458 | INFO     | main:compare:155 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.243658147s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.004321763s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.211853982s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.108741751s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.003684271s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.004792862s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n^2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-04-11 18:14:23.458 | INFO     | main:compare:155 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.243658147s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.004321763s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.211853982s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.108741751s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.003684271s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.004792862s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n^2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-04-11 18:14:23.458 | INFO     | main:compare:183 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.243658147s...
+2025-04-11 18:14:23.458 | INFO     | main:compare:183 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.243658147s...
+2025-04-11 18:18:26.187 | INFO     | main:compare:151 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-04-11 18:18:26.187 | INFO     | main:compare:151 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-04-11 18:18:29.526 | INFO     | main:compare:155 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.25081875s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.0041755s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.2485375s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.12890625s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.0032475s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.0041125s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-04-11 18:18:29.526 | INFO     | main:compare:155 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.25081875s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.0041755s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.2485375s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.12890625s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.0032475s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.0041125s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-04-11 18:18:29.526 | INFO     | main:compare:183 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.25081875s"...
+2025-04-11 18:18:29.526 | INFO     | main:compare:183 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.25081875s"...
+2025-04-11 20:04:53.723 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-11 20:04:53.723 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-14 13:38:25.477 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-14 13:38:25.477 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-14 13:52:25.458 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-14 13:52:25.458 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-15 15:51:06.649 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-15 15:51:06.649 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-15 18:22:58.094 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-15 18:22:58.094 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-17 12:09:30.360 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:09:30.360 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:43:57.094 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-17 12:43:57.094 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-17 12:43:57.940 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:43:57.940 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:44:02.035 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:44:02.035 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:45:48.059 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-17 12:45:48.059 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-17 12:45:48.939 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:45:48.939 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:47:02.186 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:47:02.186 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 12:47:05.837 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-17 12:47:05.837 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-17 15:39:15.741 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 15:39:15.741 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-17 15:57:51.103 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-17 15:57:51.103 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-23 14:16:41.680 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-23 14:16:41.680 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-23 15:59:05.700 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-23 15:59:05.700 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-23 18:46:37.903 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-23 18:46:37.903 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-23 21:12:31.657 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-23 21:12:31.657 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-24 17:26:36.311 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-24 17:26:36.311 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-24 18:46:28.971 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-24 18:46:28.971 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-24 21:51:13.208 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-24 21:51:13.208 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-24 21:59:40.373 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-24 21:59:40.373 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-24 21:59:41.235 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-24 21:59:41.235 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-24 21:59:50.620 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-24 21:59:50.620 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:12:22.670 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 00:12:22.670 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 00:12:23.566 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:12:23.566 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:12:27.956 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:12:27.956 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:13:27.644 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 00:13:27.644 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 00:13:28.497 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:13:28.497 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:13:40.690 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:13:40.690 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:49:08.207 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 00:49:08.207 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 00:49:09.452 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 00:49:09.452 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 01:30:41.580 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 01:30:41.580 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 01:30:42.921 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 01:30:42.921 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 08:10:10.700 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 08:10:10.700 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 12:11:13.282 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 12:11:13.282 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 15:32:02.525 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 15:32:02.525 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-25 17:04:03.068 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-25 17:04:03.068 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-26 18:43:43.709 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-26 18:43:43.709 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-26 19:58:08.686 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-26 19:58:08.686 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-29 12:57:03.775 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-29 12:57:03.775 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-04-29 13:16:43.461 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-04-29 13:16:43.461 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 13:39:25.445 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 13:39:25.445 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 13:46:35.089 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 13:46:35.089 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 13:46:35.975 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 13:46:35.975 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 13:49:00.684 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 13:49:00.684 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:17:48.969 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 14:17:48.969 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 14:17:49.892 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:17:49.892 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:28:13.634 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:28:13.634 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:32:33.815 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 14:32:33.815 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 14:32:34.691 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:32:34.691 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:33:11.405 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:33:11.405 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:34:14.434 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 14:34:14.434 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 14:34:15.314 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:34:15.314 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:34:25.979 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 14:34:25.979 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:22:39.787 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:22:39.787 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:22:41.105 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:22:41.105 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:37:05.545 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:37:05.545 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:40:43.596 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:40:43.596 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:40:45.490 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:40:45.490 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:42:34.811 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:42:34.811 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:42:35.679 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:42:35.679 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:43:40.991 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:43:40.991 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:45:15.645 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:45:15.645 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:45:16.508 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:45:16.508 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:45:21.941 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:45:21.941 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:51:05.598 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:51:05.598 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 15:51:21.420 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 15:51:21.420 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:11:17.216 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 16:11:17.216 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 16:11:18.120 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:11:18.120 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:11:39.717 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:11:39.717 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:12:15.190 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 16:12:15.190 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 16:12:16.061 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:12:16.061 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:14:27.308 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:14:27.308 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:15:31.808 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 16:15:31.808 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 16:15:34.879 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 16:15:34.879 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:10:16.634 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:10:16.634 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:10:17.543 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:10:17.543 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:11:03.154 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:11:03.154 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:21:17.565 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:21:17.565 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:21:19.473 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:21:19.473 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:30:36.325 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:30:36.325 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:30:37.206 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:30:37.206 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:32:49.087 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:32:49.087 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:34:22.884 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:34:22.884 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:34:25.897 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:34:25.897 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:35:05.739 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:35:05.739 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 18:35:06.597 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 18:35:06.597 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 19:14:49.911 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 19:14:49.911 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-01 19:14:54.972 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-01 19:14:54.972 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-02 22:06:38.619 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-02 22:06:38.619 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-02 23:33:34.538 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-02 23:33:34.538 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-05 00:04:08.528 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:04:08.528 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:08:55.659 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-05 00:08:55.659 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-05 00:08:56.564 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:08:56.564 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:29:00.415 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:29:00.415 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:29:33.323 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-05 00:29:33.323 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-05 00:29:34.214 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:29:34.214 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:31:47.861 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 00:31:47.861 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-05 02:17:56.660 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-05 02:17:56.660 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-08 01:32:57.294 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-08 01:32:57.294 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-08 01:38:08.830 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-08 01:38:08.830 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-08 08:17:18.192 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-08 08:17:18.192 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-08 08:54:23.442 | INFO     | main:compare:418 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-05-08 08:54:23.442 | INFO     | main:compare:418 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-05-08 08:54:28.043 | INFO     | main:compare:422 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.244929478s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.004351449s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.233621608s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.107232711s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.003556325s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.004850662s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n^2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-05-08 08:54:28.043 | INFO     | main:compare:422 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.244929478s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.004351449s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.233621608s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.107232711s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.003556325s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.004850662s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n^2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-05-08 08:54:28.044 | INFO     | main:compare:450 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.244929478s...
+2025-05-08 08:54:28.044 | INFO     | main:compare:450 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.244929478s...
+2025-05-08 12:05:52.850 | INFO     | main:compare:418 - Sending prompt to Gemini: Sorting Algorithms, Large (n > 100000)
+2025-05-08 12:05:52.850 | INFO     | main:compare:418 - Sending prompt to Gemini: Sorting Algorithms, Large (n > 100000)
+2025-05-08 12:05:57.509 | INFO     | main:compare:422 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "1000.000000000s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.019934823s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "1000.000000000s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "1000.000000000s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.015169595s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.020804477s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size, when implemented correctly.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n^2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-05-08 12:05:57.509 | INFO     | main:compare:422 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "1000.000000000s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.019934823s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "1000.000000000s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "1000.000000000s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.015169595s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.020804477s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size, when implemented correctly.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n^2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-05-08 12:05:57.509 | INFO     | main:compare:450 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "1000.00000...
+2025-05-08 12:05:57.509 | INFO     | main:compare:450 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "1000.00000...
+2025-05-08 12:06:09.894 | INFO     | main:compare:418 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-05-08 12:06:09.894 | INFO     | main:compare:418 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-05-08 12:06:13.402 | INFO     | main:compare:422 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.2503217s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.0045821s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.2513128s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.1295832s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.0039541s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.0043278s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n^2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-05-08 12:06:13.402 | INFO     | main:compare:422 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.2503217s"
+    },
+    {
+      "algorithm": "Merge Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "execution_time_seconds": "0.0045821s"
+    },
+    {
+      "algorithm": "Selection Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.2513128s"
+    },
+    {
+      "algorithm": "Insertion Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.1295832s"
+    },
+    {
+      "algorithm": "Quick Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(log n)",
+      "execution_time_seconds": "0.0039541s"
+    },
+    {
+      "algorithm": "Heap Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.0043278s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Quick Sort",
+      "insights": "Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.",
+      "performance_tips": [
+        "Consider pivot selection strategy.",
+        "Implement tail-call optimization.",
+        "Use insertion sort for small subarrays."
+      ],
+      "trade_offs": [
+        "Not a stable sorting algorithm.",
+        "Worst-case O(n^2) time complexity is possible.",
+        "Performance highly depends on pivot choice."
+      ]
+    }
+  ]
+]
+```
+2025-05-08 12:06:13.402 | INFO     | main:compare:450 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.2503217s"
+...
+2025-05-08 12:06:13.402 | INFO     | main:compare:450 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Bubble Sort",
+      "input_size": "Small (n < 1000)",
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.2503217s"
+...
+2025-05-08 18:06:43.764 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-08 18:06:43.764 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-08 18:16:42.290 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-08 18:16:42.290 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-08 20:23:10.993 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-08 20:23:10.993 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:28:53.801 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:28:53.801 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:42:41.389 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 01:42:41.389 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 01:43:22.293 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:43:22.293 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:43:59.440 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:43:59.440 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:45:31.260 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 01:45:31.260 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 01:45:32.144 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:45:32.144 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:45:36.915 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:45:36.915 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:50:34.087 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 01:50:34.087 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 01:50:34.954 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:50:34.954 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:50:38.679 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:50:38.679 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:55:37.353 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 01:55:37.353 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 01:55:38.206 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 01:55:38.206 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 02:52:22.446 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 02:52:22.446 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-09 02:52:24.682 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 02:52:24.682 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 15:02:31.089 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-09 15:02:31.089 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 01:36:41.849 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 01:36:41.849 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 01:36:42.769 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 01:36:42.769 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 01:36:47.834 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 01:36:47.834 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:22:56.586 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 02:22:56.586 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 02:22:58.390 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:22:58.390 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:27:56.993 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 02:27:56.993 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 02:27:57.835 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:27:57.835 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:28:34.067 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 02:28:34.067 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 02:28:34.917 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:28:34.917 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:28:38.291 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:28:38.291 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:33:36.869 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 02:33:36.869 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 02:33:37.726 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 02:33:37.726 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 03:06:09.521 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 03:06:09.521 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 16:21:35.932 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 16:21:35.932 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 18:11:40.584 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 18:11:40.584 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 18:11:41.483 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 18:11:41.483 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 18:43:28.564 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 18:43:28.564 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 18:43:30.785 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 18:43:30.785 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 22:02:31.148 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 22:02:31.148 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 23:16:40.580 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 23:16:40.580 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-10 23:26:09.327 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 23:26:09.327 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 23:26:12.998 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-10 23:26:12.998 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-11 01:34:39.617 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-11 01:34:39.617 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-11 01:34:41.662 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-11 01:34:41.662 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-11 13:13:57.892 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-11 13:13:57.892 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-11 17:34:59.469 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-11 17:34:59.469 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-11 17:36:34.620 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-11 17:36:34.620 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-12 04:09:22.386 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-12 04:09:22.386 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-13 22:43:03.403 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-13 22:43:03.403 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-13 22:43:17.970 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-13 22:43:17.970 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-13 22:43:30.635 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-13 22:43:41.775 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-17 19:28:22.241 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-17 19:28:22.241 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-17 20:12:05.030 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-17 20:12:05.030 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-17 20:12:07.346 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-17 20:12:07.346 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-17 22:49:18.722 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-17 22:49:18.722 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-17 23:16:50.309 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-17 23:16:50.309 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-17 23:36:48.056 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-17 23:36:48.056 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-21 22:10:24.516 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-21 22:10:24.516 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-21 22:19:54.074 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-21 22:19:54.074 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-21 22:19:57.726 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-21 22:19:57.726 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-21 22:21:16.276 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-21 22:21:16.276 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-21 22:21:21.357 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-21 22:21:21.357 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-21 22:29:28.130 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-21 22:29:28.130 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-21 22:29:37.340 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-21 22:29:37.340 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-21 22:30:10.318 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-21 22:30:10.318 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:39:28.442 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:39:28.442 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:42:38.683 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:42:38.683 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:42:39.560 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:42:39.560 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:42:42.445 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:42:42.445 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:48:48.630 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:48:48.630 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:48:52.060 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:48:52.060 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:58:50.679 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:58:50.679 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:58:51.578 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:58:51.578 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:59:24.826 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:59:24.826 | INFO     | main:lifespan:17 - Shutting down FastAPI application
+2025-05-22 01:59:25.680 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 01:59:25.680 | INFO     | main:lifespan:15 - Starting up FastAPI application
+2025-05-22 02:03:10.514 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:03:10.514 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:03:15.471 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:03:15.471 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:03:16.314 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:03:16.314 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:03:20.497 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:03:20.497 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:19:08.931 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:19:08.931 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:19:09.784 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:19:09.784 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:19:12.878 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:19:12.878 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:20:45.738 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:20:45.738 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:25:32.373 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:25:32.373 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:32:21.458 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:32:21.458 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:32:24.095 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:32:24.095 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-05-22 02:34:54.743 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-05-22 02:34:54.743 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-04 10:37:43.729 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-04 10:37:43.729 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-04 10:50:38.454 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-04 10:50:38.454 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-04 10:50:39.348 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-04 10:50:39.348 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-04 10:51:57.728 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-04 10:51:57.728 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-04 10:52:08.414 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-04 10:52:08.414 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-04 10:52:10.579 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-04 10:52:10.579 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-04 11:08:52.124 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-04 11:08:52.124 | INFO     | main:lifespan:18 - Shutting down FastAPI application
