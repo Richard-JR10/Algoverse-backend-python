@@ -3,7 +3,7 @@ import uvicorn
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List, Dict
+from typing import List, Dict, Optional
 import google.generativeai as genai
 from contextlib import asynccontextmanager
 import json
@@ -87,6 +87,7 @@ class GraphStep(BaseModel):
     target: str | None = None
     from_node: str | None = None
     distance: float | None = None
+    visited: Optional[List[str]] = None
 
 class PriorityQueue:
     def __init__(self):
@@ -567,8 +568,10 @@ async def bfs(request: GraphRequest):
     # BFS algorithm
     steps = []
     visited = set()
+    visited_order = []
     queue = [start_node]
     visited.add(start_node)
+    visited_order.append(start_node)
 
     steps.append({"type": "queue", "node": start_node})
 
@@ -578,19 +581,20 @@ async def bfs(request: GraphRequest):
 
         neighbors = adjacency_list.get(current, [])
         for neighbor in neighbors:
-            steps.append({"type": "explore", "source": current, "target": neighbor})
+            steps.append({"type": "explore", "source": current, "target": neighbor, "visited": visited_order.copy()})
             if neighbor not in visited:
                 visited.add(neighbor)
+                visited_order.append(neighbor)
                 queue.append(neighbor)
                 steps.append({"type": "visit", "node": neighbor, "from": current})
-                steps.append({"type": "queue", "node": neighbor})
+                steps.append({"type": "queue", "node": neighbor, "visited": visited_order.copy()})
             else:
                 steps.append({"type": "visited", "source": current, "target": neighbor})
 
         steps.append({"type": "finish", "node": current})
 
-    print(steps)
     return steps
+
 
 @app.post("/graph/dfs", response_model=List[GraphStep])
 async def dfs(request: GraphRequest):
@@ -616,34 +620,39 @@ async def dfs(request: GraphRequest):
                 if not isinstance(neighbor, str) or not neighbor.strip():
                     raise HTTPException(status_code=400, detail=f"Neighbor of node '{node}' must be a non-empty string")
                 if neighbor not in adjacency_list:
-                    raise HTTPException(status_code=400, detail=f"Neighbor '{neighbor}' of node '{node}' not found in graph")
+                    raise HTTPException(status_code=400,
+                                        detail=f"Neighbor '{neighbor}' of node '{node}' not found in graph")
 
         # DFS algorithm
         steps = []
         visited = set()
+        visited_order = []
         stack = [start_node]
+        visited.add(start_node)  # Mark start as visited when adding to stack
+        visited_order.append(start_node)
 
         steps.append({"type": "queue", "node": start_node})
 
         while stack:
             current = stack.pop()
-            if current not in visited:
-                steps.append({"type": "dequeue", "node": current})
-                visited.add(current)
+            steps.append({"type": "dequeue", "node": current})
 
-                neighbors = adjacency_list.get(current, [])
-                # Reverse neighbors to match frontend's stack behavior
-                for neighbor in neighbors[::-1]:
-                    steps.append({"type": "explore", "source": current, "target": neighbor})
-                    if neighbor not in visited:
-                        stack.append(neighbor)
-                        steps.append({"type": "visit", "node": neighbor, "from": current})
-                        steps.append({"type": "queue", "node": neighbor})
-                    else:
-                        steps.append({"type": "visited", "source": current, "target": neighbor})
+            neighbors = adjacency_list.get(current, [])
+            # Reverse neighbors to match stack LIFO behavior
+            for neighbor in reversed(neighbors):
+                steps.append({"type": "explore", "source": current, "target": neighbor, "visited": visited_order.copy()})
+                if neighbor not in visited:
+                    visited.add(neighbor)  # Mark as visited when adding to stack
+                    stack.append(neighbor)
+                    visited_order.append(neighbor)
+                    steps.append({"type": "visit", "node": neighbor, "from": current})
+                    steps.append({"type": "queue", "node": neighbor})
+                else:
+                    steps.append({"type": "visited", "source": current, "target": neighbor, "visited": visited_order.copy()})
 
-                steps.append({"type": "finish", "node": current})
+            steps.append({"type": "finish", "node": current})
 
+        print(steps)
         return steps
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")

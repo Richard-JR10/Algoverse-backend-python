@@ -18973,3 +18973,313 @@ violations {
       "time_complexity": "O(n)",
       "space_complexity": "O(1)",
       "execution_time_seconds": "0.00099499...
+2025-12-08 14:53:45.473 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:53:45.473 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:53:46.942 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:53:46.942 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:53:50.974 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:53:50.974 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:17:55.784 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:17:55.784 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:17:57.858 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:17:57.858 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:18:36.988 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:18:36.988 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:18:37.868 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:18:37.868 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:20:15.902 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:20:15.902 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:27:45.884 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:27:45.884 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:27:46.783 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:27:46.783 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:29:29.779 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:29:29.779 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:30:46.585 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:30:46.585 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:30:47.456 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:30:47.456 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:30:56.001 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:30:56.001 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:31:41.175 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:31:41.175 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:31:42.058 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:31:42.058 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:33:03.475 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:33:03.475 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:33:20.525 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:33:20.525 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:33:34.533 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:33:34.533 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:40:35.336 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:40:35.336 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:50:57.410 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:50:57.410 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 15:51:13.286 | INFO     | main:compare:948 - Sending prompt to Gemini: Graph Traversal, Medium (1000 < n < 100000)
+2025-12-08 15:51:13.286 | INFO     | main:compare:948 - Sending prompt to Gemini: Graph Traversal, Medium (1000 < n < 100000)
+2025-12-08 15:51:45.004 | INFO     | main:compare:952 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Breadth-First Search (BFS)",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)",
+      "execution_time_seconds": "0.0000287211s"
+    },
+    {
+      "algorithm": "Depth-First Search (DFS)",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)",
+      "execution_time_seconds": "0.0000326093s"
+    },
+    {
+      "algorithm": "Dijkstra’s",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(E + V log V)",
+      "space_complexity": "O(V + E)",
+      "execution_time_seconds": "0.0001429949s"
+    },
+    {
+      "algorithm": "Kruskal’s",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(E log E)",
+      "space_complexity": "O(V + E)",
+      "execution_time_seconds": "0.0002704169s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Breadth-First Search (BFS) and Depth-First Search (DFS)",
+      "insights": "Based on your input size and the general nature of 'Graph Traversal' tasks, BFS and DFS offer the most efficient way to explore graph structures. They both achieve optimal O(V+E) time complexity for medium-sized graphs, making them significantly faster than Dijkstra's or Kruskal's when solving more specific problems like shortest paths or Minimum Spanning Trees is not the primary goal. For simply visiting all nodes or checking connectivity, their performance is unmatched among the specified algorithms.",
+      "performance_tips": [
+        "Utilize adjacency list representation for sparse graphs to minimize complexity to O(V+E).",
+        "For BFS, prefer an efficient queue implementation (e.g., deque). For DFS, use an iterative approach or optimize recursion for very deep graphs to avoid stack overflow.",
+        "Optimize memory usage by effectively managing visited sets or arrays, especially for large graphs."
+      ],
+      "trade_offs": [
+        "BFS can consume considerable memory for very wide graphs due to the queue storing many nodes at the same level.",
+        "Recursive DFS implementations can face stack overflow issues on extremely deep graphs; an iterative approach might be necessary.",
+        "Neither BFS nor DFS can directly solve shortest path problems in weighted graphs; Dijkstra’s is required for such scenarios."
+      ]
+    }
+  ]
+]
+```
+2025-12-08 15:51:45.004 | INFO     | main:compare:952 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Breadth-First Search (BFS)",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)",
+      "execution_time_seconds": "0.0000287211s"
+    },
+    {
+      "algorithm": "Depth-First Search (DFS)",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)",
+      "execution_time_seconds": "0.0000326093s"
+    },
+    {
+      "algorithm": "Dijkstra’s",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(E + V log V)",
+      "space_complexity": "O(V + E)",
+      "execution_time_seconds": "0.0001429949s"
+    },
+    {
+      "algorithm": "Kruskal’s",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(E log E)",
+      "space_complexity": "O(V + E)",
+      "execution_time_seconds": "0.0002704169s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Breadth-First Search (BFS) and Depth-First Search (DFS)",
+      "insights": "Based on your input size and the general nature of 'Graph Traversal' tasks, BFS and DFS offer the most efficient way to explore graph structures. They both achieve optimal O(V+E) time complexity for medium-sized graphs, making them significantly faster than Dijkstra's or Kruskal's when solving more specific problems like shortest paths or Minimum Spanning Trees is not the primary goal. For simply visiting all nodes or checking connectivity, their performance is unmatched among the specified algorithms.",
+      "performance_tips": [
+        "Utilize adjacency list representation for sparse graphs to minimize complexity to O(V+E).",
+        "For BFS, prefer an efficient queue implementation (e.g., deque). For DFS, use an iterative approach or optimize recursion for very deep graphs to avoid stack overflow.",
+        "Optimize memory usage by effectively managing visited sets or arrays, especially for large graphs."
+      ],
+      "trade_offs": [
+        "BFS can consume considerable memory for very wide graphs due to the queue storing many nodes at the same level.",
+        "Recursive DFS implementations can face stack overflow issues on extremely deep graphs; an iterative approach might be necessary.",
+        "Neither BFS nor DFS can directly solve shortest path problems in weighted graphs; Dijkstra’s is required for such scenarios."
+      ]
+    }
+  ]
+]
+```
+2025-12-08 15:51:45.005 | INFO     | main:compare:980 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Breadth-First Search (BFS)",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)",
+      "execution_t...
+2025-12-08 15:51:45.005 | INFO     | main:compare:980 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Breadth-First Search (BFS)",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)",
+      "execution_t...
+2025-12-08 15:52:31.241 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 15:52:31.241 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 18:08:38.798 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 18:08:38.798 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 18:42:06.779 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 18:42:06.779 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 18:42:07.812 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 18:42:07.812 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 18:42:14.144 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 18:42:14.144 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:12:59.870 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:12:59.870 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:13:00.938 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:13:00.938 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:13:50.894 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:13:50.894 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:18:49.480 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:18:49.480 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:18:50.619 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:18:50.619 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:19:01.054 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:19:01.054 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:19:02.002 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:19:02.002 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:20:35.495 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:20:35.495 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:21:30.788 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:21:30.788 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:21:35.390 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:21:35.390 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:25:43.631 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:25:43.631 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:25:46.599 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:25:46.599 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:26:47.367 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:26:47.367 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:26:50.296 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:26:50.296 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:31:48.775 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:31:48.775 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:31:49.898 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:31:49.898 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:52:17.511 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:52:17.511 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:52:18.409 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:52:18.409 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:52:21.283 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:52:21.283 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:52:58.381 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:52:58.381 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 19:53:01.199 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 19:53:01.199 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 20:53:26.355 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 20:53:26.355 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 20:53:27.277 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 20:53:27.277 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 20:53:30.272 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 20:53:30.272 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 21:13:37.742 | INFO     | main:compare:955 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 21:13:37.742 | INFO     | main:compare:955 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 21:13:47.892 | INFO     | main:compare:959 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Linear Search",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.00000908s"
+    },
+    {
+      "algorithm": "Binary Search",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.0000000139521s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Binary Search",
+      "insights": "For a medium input size (n=10,000) and given that search algorithms are typically applied to data that is either already sorted or can be efficiently sorted, Binary Search is overwhelmingly superior in performance. Its logarithmic time complexity (O(log n)) means that the number of operations grows very slowly with increasing input size, making it incredibly fast. Linear Search, with its O(n) complexity, becomes impractical for larger datasets as its execution time scales directly with the input size.",
+      "performance_tips": [
+        "Ensure the data set is sorted before performing Binary Search; otherwise, the O(n log n) cost of sorting might negate its benefits if only a single search is performed.",
+        "For very small datasets (n < ~50), the overhead of Binary Search (e.g., initial sort, log calculations) might make Linear Search competitive or even slightly faster.",
+        "When performing multiple searches on the same dataset, the initial sorting cost for Binary Search is amortized, making it the clear winner."
+      ],
+      "trade_offs": [
+        "Binary Search requires the data to be sorted, which can be an expensive preprocessing step (O(n log n)) if the data is initially unsorted.",
+        "Linear Search does not require sorted data, making it simpler to apply immediately to any list.",
+        "Implementing Binary Search can be slightly more complex than Linear Search, especially iterative vs. recursive approaches, though both are generally straightforward."
+      ]
+    }
+  ]
+]
+```
+2025-12-08 21:13:47.892 | INFO     | main:compare:959 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Linear Search",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.00000908s"
+    },
+    {
+      "algorithm": "Binary Search",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.0000000139521s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Binary Search",
+      "insights": "For a medium input size (n=10,000) and given that search algorithms are typically applied to data that is either already sorted or can be efficiently sorted, Binary Search is overwhelmingly superior in performance. Its logarithmic time complexity (O(log n)) means that the number of operations grows very slowly with increasing input size, making it incredibly fast. Linear Search, with its O(n) complexity, becomes impractical for larger datasets as its execution time scales directly with the input size.",
+      "performance_tips": [
+        "Ensure the data set is sorted before performing Binary Search; otherwise, the O(n log n) cost of sorting might negate its benefits if only a single search is performed.",
+        "For very small datasets (n < ~50), the overhead of Binary Search (e.g., initial sort, log calculations) might make Linear Search competitive or even slightly faster.",
+        "When performing multiple searches on the same dataset, the initial sorting cost for Binary Search is amortized, making it the clear winner."
+      ],
+      "trade_offs": [
+        "Binary Search requires the data to be sorted, which can be an expensive preprocessing step (O(n log n)) if the data is initially unsorted.",
+        "Linear Search does not require sorted data, making it simpler to apply immediately to any list.",
+        "Implementing Binary Search can be slightly more complex than Linear Search, especially iterative vs. recursive approaches, though both are generally straightforward."
+      ]
+    }
+  ]
+]
+```
+2025-12-08 21:13:47.892 | INFO     | main:compare:987 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Linear Search",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0....
+2025-12-08 21:13:47.892 | INFO     | main:compare:987 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Linear Search",
+      "input_size": "Medium (1000 < n < 100000)",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0....
+2025-12-08 21:27:44.411 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 21:27:44.411 | INFO     | main:lifespan:22 - Shutting down FastAPI application
