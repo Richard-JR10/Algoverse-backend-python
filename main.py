@@ -8,6 +8,10 @@ import google.generativeai as genai
 from contextlib import asynccontextmanager
 import json
 from loguru import logger
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 logger.add("app.log", rotation="500 MB", level="INFO")
 
@@ -21,8 +25,7 @@ app = FastAPI(lifespan=lifespan)
 
 # CORS setup to allow frontend requests
 origins = ["http://localhost:5173","https://algoverse1.netlify.app"]
-GEMINI_API_KEY = "AIzaSyAJ8MY3jEhr6a2kKaIeqc2bpI5W0Uop9ks"
-genai.configure(api_key=GEMINI_API_KEY)
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 app.add_middleware(
     CORSMiddleware,
@@ -541,8 +544,6 @@ async def binary_search(request: SearchRequest):
 async def bfs(request: GraphRequest):
     adjacency_list = request.adjacency_list
     start_node = request.start_node
-    print(adjacency_list)
-    print(start_node)
     # Validate inputs
     if not isinstance(adjacency_list, dict):
         raise HTTPException(status_code=400, detail="Adjacency list must be a dictionary")
@@ -884,7 +885,7 @@ async def get_hanoi_steps(request: HanoiRequest):
 def get_text_model():
     """Returns a text-only generative model."""
     try:
-        return genai.GenerativeModel('gemini-2.0-flash')  # Updated model as requested
+        return genai.GenerativeModel('gemini-2.5-flash')  # Updated model as requested
     except Exception as e:
         logger.error(f"Failed to initialize model: {e}")
         raise HTTPException(status_code=500, detail="Model initialization failed. Check if 'gemini-2.0-flash' is a valid model.")

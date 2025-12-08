@@ -18073,3 +18073,903 @@ Trade-offs:
 2025-12-04 10:52:10.579 | INFO     | main:lifespan:16 - Starting up FastAPI application
 2025-12-04 11:08:52.124 | INFO     | main:lifespan:18 - Shutting down FastAPI application
 2025-12-04 11:08:52.124 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-08 11:26:22.434 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-08 11:26:22.434 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-08 14:22:26.560 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-08 14:22:26.560 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-08 14:23:34.516 | INFO     | main:compare:943 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:23:34.516 | INFO     | main:compare:943 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:23:34.762 | ERROR    | main:compare:999 - Comparison failed: 403 Your API key was reported as leaked. Please use another API key.
+2025-12-08 14:23:34.762 | ERROR    | main:compare:999 - Comparison failed: 403 Your API key was reported as leaked. Please use another API key.
+2025-12-08 14:23:37.948 | INFO     | main:compare:943 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:23:37.948 | INFO     | main:compare:943 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:23:38.027 | ERROR    | main:compare:999 - Comparison failed: 403 Your API key was reported as leaked. Please use another API key.
+2025-12-08 14:23:38.027 | ERROR    | main:compare:999 - Comparison failed: 403 Your API key was reported as leaked. Please use another API key.
+2025-12-08 14:27:24.192 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-08 14:27:24.192 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-08 14:27:27.491 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-08 14:27:27.491 | INFO     | main:lifespan:16 - Starting up FastAPI application
+2025-12-08 14:30:48.519 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-08 14:30:48.519 | INFO     | main:lifespan:18 - Shutting down FastAPI application
+2025-12-08 14:30:49.447 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:30:49.447 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:30:55.496 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:30:55.496 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:31:06.584 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:31:06.584 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:31:06.918 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 49.705228799s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 49
+}
+]
+2025-12-08 14:31:06.918 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 49.705228799s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 49
+}
+]
+2025-12-08 14:31:13.430 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:31:13.430 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:31:13.541 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 43.073406708s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 43
+}
+]
+2025-12-08 14:31:13.541 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 43.073406708s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 43
+}
+]
+2025-12-08 14:31:17.048 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:31:17.048 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:31:17.138 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 39.466068581s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 39
+}
+]
+2025-12-08 14:31:17.138 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 39.466068581s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 39
+}
+]
+2025-12-08 14:32:04.033 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:32:04.033 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:32:04.133 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 52.481962161s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 52
+}
+]
+2025-12-08 14:32:04.133 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 52.481962161s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 52
+}
+]
+2025-12-08 14:34:03.281 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:34:03.281 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:34:03.543 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 53.07154405s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 53
+}
+]
+2025-12-08 14:34:03.543 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 53.07154405s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 53
+}
+]
+2025-12-08 14:35:31.902 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:31.902 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:31.992 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 24.621644059s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2025-12-08 14:35:31.992 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 24.621644059s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2025-12-08 14:35:35.022 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:35.022 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:35.101 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 21.510784244s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 21
+}
+]
+2025-12-08 14:35:35.101 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 21.510784244s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 21
+}
+]
+2025-12-08 14:35:38.036 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:38.036 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:38.128 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 18.489589392s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 18
+}
+]
+2025-12-08 14:35:38.128 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 18.489589392s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 18
+}
+]
+2025-12-08 14:35:42.864 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:42.864 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:42.950 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 13.669026614s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 13
+}
+]
+2025-12-08 14:35:42.950 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 13.669026614s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 13
+}
+]
+2025-12-08 14:35:46.849 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:46.849 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:46.933 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 9.68438356s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 9
+}
+]
+2025-12-08 14:35:46.933 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 9.68438356s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 9
+}
+]
+2025-12-08 14:35:56.298 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:56.298 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:56.381 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 234.094674ms. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+}
+]
+2025-12-08 14:35:56.381 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 234.094674ms. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+}
+]
+2025-12-08 14:35:59.070 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:59.070 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:35:59.152 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 57.46803895s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 57
+}
+]
+2025-12-08 14:35:59.152 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 57.46803895s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 57
+}
+]
+2025-12-08 14:36:00.365 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:36:00.365 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:36:00.448 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 56.172462033s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 56
+}
+]
+2025-12-08 14:36:00.448 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 56.172462033s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 56
+}
+]
+2025-12-08 14:36:52.022 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:36:52.022 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:36:52.099 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 4.516868106s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 4
+}
+]
+2025-12-08 14:36:52.099 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 4.516868106s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 4
+}
+]
+2025-12-08 14:36:56.336 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:36:56.336 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:37:01.882 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:37:01.882 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:37:07.922 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:37:07.922 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:37:08.125 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:37:08.125 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:37:11.489 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:37:11.489 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:37:11.566 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:37:11.566 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:37:15.150 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:37:15.150 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:37:15.240 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:37:15.240 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:39:53.186 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:39:53.186 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:39:53.318 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:39:53.318 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:39:56.846 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:39:56.846 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:39:56.930 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:39:56.930 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:40:00.325 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:40:00.325 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:40:00.404 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:40:00.404 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:40:11.131 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:40:11.131 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:40:11.216 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:40:11.216 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:41:44.728 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:41:44.728 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:41:44.814 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:41:44.814 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:42:18.768 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:42:18.768 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:42:18.852 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:42:18.852 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:43:30.806 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:43:30.806 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Small (n < 1000)
+2025-12-08 14:43:30.884 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:43:30.884 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:43:37.856 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:43:37.856 | INFO     | main:compare:946 - Sending prompt to Gemini: Sorting Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:43:37.939 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:43:37.939 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+2025-12-08 14:43:41.930 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:43:41.930 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:43:48.081 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:43:48.081 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:43:57.409 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:43:57.409 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Medium (1000 < n < 100000)
+2025-12-08 14:43:57.566 | ERROR    | main:compare:1002 - Comparison failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-08 14:43:57.566 | ERROR    | main:compare:1002 - Comparison failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-08 14:44:00.322 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:00.322 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:00.377 | ERROR    | main:compare:1002 - Comparison failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-08 14:44:00.377 | ERROR    | main:compare:1002 - Comparison failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-08 14:44:09.417 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:09.417 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:09.472 | ERROR    | main:compare:1002 - Comparison failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-08 14:44:09.472 | ERROR    | main:compare:1002 - Comparison failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-08 14:44:13.236 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:13.236 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:13.291 | ERROR    | main:compare:1002 - Comparison failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-08 14:44:13.291 | ERROR    | main:compare:1002 - Comparison failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-08 14:44:16.211 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:44:16.211 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:44:20.044 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:44:20.044 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:44:23.249 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:23.249 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:23.447 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 33.202921674s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 33
+}
+]
+2025-12-08 14:44:23.447 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 33.202921674s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 33
+}
+]
+2025-12-08 14:44:26.948 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:26.948 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:27.030 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 29.601400079s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 29
+}
+]
+2025-12-08 14:44:27.030 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 29.601400079s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 29
+}
+]
+2025-12-08 14:44:41.948 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:44:41.948 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:44:45.809 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:44:45.809 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:44:50.081 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:50.081 | INFO     | main:compare:946 - Sending prompt to Gemini: Recursion, Large (n > 100000)
+2025-12-08 14:44:50.342 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 6.292721144s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 6
+}
+]
+2025-12-08 14:44:50.342 | ERROR    | main:compare:1002 - Comparison failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 6.292721144s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 6
+}
+]
+2025-12-08 14:50:34.089 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:50:34.089 | INFO     | main:lifespan:22 - Shutting down FastAPI application
+2025-12-08 14:50:36.993 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:50:36.993 | INFO     | main:lifespan:20 - Starting up FastAPI application
+2025-12-08 14:50:44.348 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Large (n > 100000)
+2025-12-08 14:50:44.348 | INFO     | main:compare:946 - Sending prompt to Gemini: Search Algorithms, Large (n > 100000)
+2025-12-08 14:51:00.389 | INFO     | main:compare:950 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Linear Search",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.0009949929280459997s"
+    },
+    {
+      "algorithm": "Binary Search",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.000000021671987595359744s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Binary Search",
+      "insights": "For large input sizes and data that is already sorted (or can be sorted once for multiple searches), Binary Search offers significantly superior performance due to its logarithmic time complexity (O(log n)). It drastically reduces the number of comparisons needed to find an element compared to Linear Search (O(n)).",
+      "performance_tips": [
+        "Ensure the input array is always sorted before performing Binary Search.",
+        "For frequent searches on static data, sort once and then use Binary Search repeatedly.",
+        "Prefer iterative implementations to avoid potential stack overflow issues with deep recursion on very large inputs, and to maintain O(1) auxiliary space complexity."
+      ],
+      "trade_offs": [
+        "Requires the input array to be sorted, which adds an initial sorting cost (e.g., O(N log N)).",
+        "Not efficient for frequently modified data where sorting overhead outweighs search benefits.",
+        "Does not work on unsorted lists; Linear Search is the only option in that scenario."
+      ]
+    }
+  ]
+]
+```
+2025-12-08 14:51:00.389 | INFO     | main:compare:950 - Raw Gemini response (full): ```json
+[
+  [
+    {
+      "algorithm": "Linear Search",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.0009949929280459997s"
+    },
+    {
+      "algorithm": "Binary Search",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(log n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.000000021671987595359744s"
+    }
+  ],
+  [
+    {
+      "recommendation": "Binary Search",
+      "insights": "For large input sizes and data that is already sorted (or can be sorted once for multiple searches), Binary Search offers significantly superior performance due to its logarithmic time complexity (O(log n)). It drastically reduces the number of comparisons needed to find an element compared to Linear Search (O(n)).",
+      "performance_tips": [
+        "Ensure the input array is always sorted before performing Binary Search.",
+        "For frequent searches on static data, sort once and then use Binary Search repeatedly.",
+        "Prefer iterative implementations to avoid potential stack overflow issues with deep recursion on very large inputs, and to maintain O(1) auxiliary space complexity."
+      ],
+      "trade_offs": [
+        "Requires the input array to be sorted, which adds an initial sorting cost (e.g., O(N log N)).",
+        "Not efficient for frequently modified data where sorting overhead outweighs search benefits.",
+        "Does not work on unsorted lists; Linear Search is the only option in that scenario."
+      ]
+    }
+  ]
+]
+```
+2025-12-08 14:51:00.390 | INFO     | main:compare:978 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Linear Search",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.00099499...
+2025-12-08 14:51:00.390 | INFO     | main:compare:978 - Extracted JSON portion: [
+  [
+    {
+      "algorithm": "Linear Search",
+      "input_size": "Large (n > 100000)",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "execution_time_seconds": "0.00099499...
