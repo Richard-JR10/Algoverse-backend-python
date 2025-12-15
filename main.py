@@ -574,11 +574,11 @@ async def bfs(request: GraphRequest):
     visited.add(start_node)
     visited_order.append(start_node)
 
-    steps.append({"type": "queue", "node": start_node})
+    steps.append({"type": "queue", "node": start_node, "visited": visited_order.copy()})
 
     while queue:
         current = queue.pop(0)
-        steps.append({"type": "dequeue", "node": current})
+        steps.append({"type": "dequeue", "node": current, "visited": visited_order.copy()})
 
         neighbors = adjacency_list.get(current, [])
         for neighbor in neighbors:
@@ -587,12 +587,12 @@ async def bfs(request: GraphRequest):
                 visited.add(neighbor)
                 visited_order.append(neighbor)
                 queue.append(neighbor)
-                steps.append({"type": "visit", "node": neighbor, "from": current})
+                steps.append({"type": "visit", "node": neighbor, "from": current, "visited": visited_order.copy()})
                 steps.append({"type": "queue", "node": neighbor, "visited": visited_order.copy()})
             else:
-                steps.append({"type": "visited", "source": current, "target": neighbor})
+                steps.append({"type": "visited", "source": current, "target": neighbor, "visited": visited_order.copy()})
 
-        steps.append({"type": "finish", "node": current})
+        steps.append({"type": "finish", "node": current, "visited": visited_order.copy()})
 
     return steps
 
@@ -632,11 +632,11 @@ async def dfs(request: GraphRequest):
         visited.add(start_node)  # Mark start as visited when adding to stack
         visited_order.append(start_node)
 
-        steps.append({"type": "queue", "node": start_node})
+        steps.append({"type": "queue", "node": start_node, "visited": visited_order.copy()})
 
         while stack:
             current = stack.pop()
-            steps.append({"type": "dequeue", "node": current})
+            steps.append({"type": "dequeue", "node": current, "visited": visited_order.copy()})
 
             neighbors = adjacency_list.get(current, [])
             # Reverse neighbors to match stack LIFO behavior
@@ -646,14 +646,13 @@ async def dfs(request: GraphRequest):
                     visited.add(neighbor)  # Mark as visited when adding to stack
                     stack.append(neighbor)
                     visited_order.append(neighbor)
-                    steps.append({"type": "visit", "node": neighbor, "from": current})
-                    steps.append({"type": "queue", "node": neighbor})
+                    steps.append({"type": "visit", "node": neighbor, "from": current, "visited": visited_order.copy()})
+                    steps.append({"type": "queue", "node": neighbor, "visited": visited_order.copy()})
                 else:
                     steps.append({"type": "visited", "source": current, "target": neighbor, "visited": visited_order.copy()})
 
-            steps.append({"type": "finish", "node": current})
+            steps.append({"type": "finish", "node": current, "visited": visited_order.copy()})
 
-        print(steps)
         return steps
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
@@ -693,23 +692,25 @@ async def dijkstra(request: DijkstraGraphRequest):
         previous = {}
         pq = PriorityQueue()
         visited = set()
+        visited_order = []
 
         distances[start_node] = 0
         pq.enqueue(start_node, 0)
-        steps.append({"type": "queue", "node": start_node})
+        steps.append({"type": "queue", "node": start_node, "visited": visited_order.copy()})
 
         while not pq.is_empty():
             current = pq.dequeue()
             if current in visited:
                 continue
 
-            steps.append({"type": "dequeue", "node": current})
+            steps.append({"type": "dequeue", "node": current, "visited": visited_order.copy()})
             visited.add(current)
+            visited_order.append(current)
 
             for edge in adjacency_list.get(current, []):
                 toNode = edge.toNode
                 weight = edge.weight
-                steps.append({"type": "explore", "source": current, "target": toNode})
+                steps.append({"type": "explore", "source": current, "target": toNode, "visited": visited_order.copy()})
 
                 new_distance = distances[current] + weight
                 if new_distance < distances[toNode]:
@@ -717,13 +718,13 @@ async def dijkstra(request: DijkstraGraphRequest):
                     previous[toNode] = current
                     if toNode not in visited:
                         pq.enqueue(toNode, new_distance)
-                        steps.append({"type": "visit", "node": toNode, "distance": new_distance, "from": current})
+                        steps.append({"type": "visit", "node": toNode, "distance": new_distance, "from": current, "visited": visited_order.copy()})
                     else:
-                        steps.append({"type": "distance", "node": toNode, "distance": new_distance})
+                        steps.append({"type": "distance", "node": toNode, "distance": new_distance, "visited": visited_order.copy()})
                 else:
-                    steps.append({"type": "visited", "source": current, "target": toNode})
+                    steps.append({"type": "visited", "source": current, "target": toNode, "visited": visited_order.copy()})
 
-            steps.append({"type": "finish", "node": current, "distance": distances[current]})
+            steps.append({"type": "finish", "node": current, "distance": distances[current], "visited": visited_order.copy()})
 
         # Add shortest path steps
         for node in adjacency_list:
@@ -734,7 +735,7 @@ async def dijkstra(request: DijkstraGraphRequest):
                     path.append((previous[current], current))
                     current = previous[current]
                 for source, target in reversed(path):
-                    steps.append({"type": "path", "source": source, "target": target})
+                    steps.append({"type": "path", "source": source, "target": target, "visited": visited_order.copy()})
 
         return steps
     except Exception as e:
