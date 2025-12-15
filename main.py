@@ -38,6 +38,7 @@ app.add_middleware(
 class AlgorithmRequest(BaseModel):
     category: str  # e.g., "Sorting"
     input_size: str  # e.g., "Small (n < 1000)"
+    algorithms: List[str]
 
 class AlgorithmEntry(BaseModel):
     algorithm: str
@@ -899,22 +900,49 @@ def get_text_model():
         logger.error(f"Failed to initialize model: {e}")
         raise HTTPException(status_code=500, detail="Model initialization failed. Check if 'gemini-2.0-flash' is a valid model.")
 
+
 @app.post("/compare")
 async def compare(request: AlgorithmRequest,
-    model: genai.GenerativeModel = Depends(get_text_model)
-):
+                  model: genai.GenerativeModel = Depends(get_text_model)
+                  ):
     """Compare algorithms for a given category and input size."""
     try:
-        prompt = f"""
-        You are an expert in algorithms and performance analysis. The user has selected category '{request.category}' and input size '{request.input_size}'. Focus exclusively on the selected category '{request.category}' and ignore all other categories. Compare only the algorithms specified for '{request.category}' as follows:
+        # Extract selected algorithms from the request
+        selected_algorithms = request.algorithms if hasattr(request, 'algorithms') and request.algorithms else []
 
-        - If '{request.category}' is 'Search Algorithms': Compare Linear Search and Binary Search.
-        - If '{request.category}' is 'Sorting Algorithms': Compare Bubble Sort, Merge Sort, Selection Sort, Insertion Sort, Quick Sort, and Heap Sort.
-        - If '{request.category}' is 'Graph Traversal': Compare Breadth-First Search (BFS), Depth-First Search (DFS), Dijkstra’s, and Kruskal.
-        - If '{request.category}' is 'Recursion Algorithms': Compare Factorial Calculation and Tower of Hanoi Calculation.
-        
+        # Map algorithm names to their categories for validation
+        algorithm_categories = {
+            'Sorting Algorithms': ['Bubble Sort', 'Merge Sort', 'Selection Sort', 'Insertion Sort', 'Quick Sort',
+                                   'Radix Sort', 'Heap Sort'],
+            'Search Algorithms': ['Linear Search', 'Binary Search', 'Jump Search', 'Interpolation Search'],
+            'Graph Traversal': ['BFS', 'DFS', 'Dijkstra', 'Kruskal', 'Tree Traversal (Pre-order)',
+                                'Tree Traversal (In-order)', 'Tree Traversal (Post-order)'],
+            'Recursion': ['Factorial', 'Tower of Hanoi']
+        }
+
+        # Get the algorithms for the selected category
+        category_algorithms = algorithm_categories.get(request.category, [])
+
+        # If no algorithms selected, use all algorithms from the category
+        if not selected_algorithms:
+            algorithms_to_compare = category_algorithms
+        else:
+            # Filter to only include valid algorithms for this category
+            algorithms_to_compare = [algo for algo in selected_algorithms if algo in category_algorithms]
+
+        if not algorithms_to_compare:
+            raise HTTPException(status_code=400, detail="No valid algorithms selected for comparison")
+
+        # Create the algorithms list string for the prompt
+        algorithms_list = ', '.join(algorithms_to_compare)
+
+        prompt = f"""
+        You are an expert in algorithms and performance analysis. The user has selected category '{request.category}' and input size '{request.input_size}'. 
+
+        Compare ONLY these specific algorithms: {algorithms_list}
+
         For the selected category '{request.category}' and input size '{request.input_size}', provide:
-        1. A table comparing the specified algorithms with columns: algorithm, input_size, time_complexity, space_complexity, execution_time_seconds (as string with 's', e.g., '0.005s'). 
+        1. A table comparing the specified algorithms ({algorithms_list}) with columns: algorithm, input_size, time_complexity, space_complexity, execution_time_seconds (as string with 's', e.g., '0.005s'). 
            - Estimate execution time realistically as follows:
              - Assume a CPU with 1 billion operations per second (1 operation ≈ 1 nanosecond).
              - Map '{request.input_size}' to a representative 'n':
@@ -926,19 +954,25 @@ async def compare(request: AlgorithmRequest,
              - Add randomness: Adjust the base time by a random factor between -20% and +20% to mimic real-world variations (e.g., caching, system load). For example, if base time is 0.01s, final time could range from 0.008s to 0.012s.
              - Do not round the final time; keep full precision and append 's' (e.g., '0.0001329s').
         2. A recommendation with insights, performance_tips (list, max 3), and trade_offs (list, max 3). For the 'recommendation' field, return only the name of the recommended algorithm(s) (e.g., 'Quick Sort') without any prefix like 'Recommended Algorithm:'.
-        
+
         Return ONLY this JSON format with no additional text outside the JSON:
         [
           [
-            {{"algorithm": "Example", "input_size": "{request.input_size}", "time_complexity": "O(n)", "space_complexity": "O(1)", "execution_time_seconds": "0.005s"}},
+            {{"algorithm": "Example Algorithm Name", "input_size": "{request.input_size}", "time_complexity": "O(n)", "space_complexity": "O(1)", "execution_time_seconds": "0.005s"}},
             ...
           ],
           [
-            {{"recommendation": "Example", "insights": "Explanation...", "performance_tips": ["Tip 1", "Tip 2", "Tip 3"], "trade_offs": ["Trade-off 1", "Trade-off 2", "Trade-off 3"]}}
+            {{"recommendation": "Example Algorithm", "insights": "Explanation...", "performance_tips": ["Tip 1", "Tip 2", "Tip 3"], "trade_offs": ["Trade-off 1", "Trade-off 2", "Trade-off 3"]}}
           ]
         ]
-        
-        Specifically, format the recommendation, insights, performance tips, and trade-offs to match this style:
+
+        IMPORTANT: 
+        - Only include data for these algorithms: {algorithms_list}
+        - Use the exact algorithm names as provided
+        - The recommendation should be based on comparing only the selected algorithms
+        - Format recommendations in a clear, professional style
+
+        Example recommendation format:
         Quick Sort
         Based on your input size and requirements, Quick Sort performs best with O(nlogn) average time complexity and relatively minimal space usage (O(logn) average). It showed superior performance in benchmarks for the given dataset size.
         Performance Tips:
@@ -947,12 +981,12 @@ async def compare(request: AlgorithmRequest,
         - Use insertion sort for small subarrays.
         Trade-offs:
         - Not a stable sorting algorithm.
-        - Worst-case O(n2) time complexity is possible.
+        - Worst-case O(n²) time complexity is possible.
         - Performance highly depends on pivot choice.
-        
-        Do not include algorithms or data for any category other than '{request.category}'. Limit your response strictly to the selected category and input size.
         """
-        logger.info(f"Sending prompt to Gemini: {request.category}, {request.input_size}")
+
+        logger.info(
+            f"Sending prompt to Gemini: category={request.category}, input_size={request.input_size}, algorithms={algorithms_to_compare}")
 
         response = model.generate_content(prompt)
         response_text = response.text.strip()
